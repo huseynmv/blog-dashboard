@@ -1,0 +1,82 @@
+{
+  "summary": {
+    "byCategory": [
+      {
+        "category": "Knowledge",
+        "count": 13
+      },
+      {
+        "category": "Technology",
+        "count": 12
+      },
+      {
+        "category": "Travel",
+        "count": 9
+      },
+      {
+        "category": "Design",
+        "count": 7
+      },
+      {
+        "category": "Business",
+        "count": 8
+      },
+      {
+        "category": "Lifestyle",
+        "count": 11
+      }
+    ],
+    "byCreatedDate": [
+      {
+        "month": "2025-01",
+        "count": 13
+      },
+      {
+        "month": "2025-02",
+        "count": 10
+      },
+      {
+        "month": "2025-03",
+        "count": 10
+      },
+      {
+        "month": "2025-04",
+        "count": 13
+      },
+      {
+        "month": "2025-05",
+        "count": 2
+      },
+            {
+        "month": "2025-06",
+        "count": 2
+      }
+    ],
+    "byView": [
+      {
+        "category": "Knowledge & Learning",
+        "views": 43543
+      },
+      {
+        "category": "Technology",
+        "views": 40028
+      },
+      {
+        "category": "Travel & Culture",
+        "views": 29247
+      },
+      {
+        "category": "Design & Creativity",
+        "views": 21740
+      },
+      {
+        "category": "Business & Marketing",
+        "views": 19469
+      },
+      {
+        "category": "Lifestyle & Wellness",
+        "views": 31175
+      }
+    ]
+  }
+}
