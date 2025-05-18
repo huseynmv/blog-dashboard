@@ -7,26 +7,15 @@ import {
   Cell,
 } from "recharts";
 
-interface ViewDataItem {
-  category: string;
-  views: number;
-}
+import type { ByViewProps } from "../../../types/view";
 
-interface BlogsByViewProps {
-  data: ViewDataItem[];
-}
-
-
-
-export default function index({ data }: BlogsByViewProps) {
-
- const baseHeight = 255;
-  const extraHeightPerItem = 10;
-  const minItems = 6;
-  const extraHeight = Math.max(0, data.length - minItems) * extraHeightPerItem;
-  const containerHeight = baseHeight + extraHeight;
+export default function index({ data }: ByViewProps) {
+  
   const barHeight = 4;
   const rowGap = 6;
+  const labelHeight = 22;
+  const topPadding = 63;
+  const containerHeight = topPadding + data.length * (barHeight + labelHeight + rowGap);
   const maxViews = Math.max(...data.map((d) => d.views), 0);
 
   return (
@@ -46,18 +35,18 @@ export default function index({ data }: BlogsByViewProps) {
                 fontWeight: 500,
                 fontSize: 14,
                 color: "#333",
-                marginBottom: 4,
+                marginBottom: 6,
               }}
             >
               <span>{item.category}</span>
               <span>{item.views.toLocaleString()}</span>
             </div>
-            <div style={{ width: "100%", height: barHeight, marginTop: 6 }}>
+            <div style={{ width: "100%", height: barHeight }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   layout="vertical"
                   data={[item]}
-                  margin={{ top: 0, bottom: 0, left: 0, right: 0 }}
+                  margin={{ top: 0, bottom: -0, left: 0, right: 0 }}
                 >
                   <XAxis type="number" domain={[0, maxViews]} hide />
                   <YAxis type="category" dataKey="name" hide />
@@ -79,3 +68,5 @@ export default function index({ data }: BlogsByViewProps) {
     </div>
   );
 }
+
+

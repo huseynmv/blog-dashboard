@@ -6,31 +6,11 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+import { formatMonth } from "../../../helpers/formatMonth";
+import type { ByCreatedDateProps } from "../../../types/date";
 
-interface CreatedDateData {
-  month: string;
-  count: number;
-}
+export default function Index({ data }: ByCreatedDateProps) {
 
-interface Props {
-  data: CreatedDateData[];
-}
-
-const baseHeight = 255;
-const extraHeightPerItem = 10;
-const minItems = 6;
-
-const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-function formatMonth(monthString: string) {
-  const monthIndex = parseInt(monthString.split("-")[1], 10) - 1;
-  return monthNames[monthIndex] || monthString;
-}
-
-export default function Index({ data }: Props) {
-
-  const extraHeight = Math.max(0, data.length - minItems) * extraHeightPerItem;
-  const containerHeight = baseHeight + extraHeight;
   const chartData = data.map((item) => ({
     month: item.month,
     value: item.count,
@@ -39,7 +19,7 @@ export default function Index({ data }: Props) {
   return (
     <div
       className="col-span-3 rounded-[10px] border py-[21px] border-[#f1f1f1] bg-[#FCFCFC]"
-      style={{ height: containerHeight }}
+      style={{maxHeight:255 }}
     >
       <p className="font-[500] text-[15px] leading-[32px] mb-[4px] px-[16.77px]">
         Blogs by Created date

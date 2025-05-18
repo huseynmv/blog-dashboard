@@ -5,27 +5,21 @@ import {
   Cell,
 } from "recharts";
 
-interface CategoryData {
-  category: string;
-  count: number;
-}
-
-interface Props {
-  data: CategoryData[];
-}
-
+import type { ByCategoryProps } from "../../../types/category";
 const COLORS = [
-  "#7c3aed",
-  "#8b5cf6",
-  "#a78bfa",
-  "#c4b5fd",
-  "#c7d2fe",
-  "#ede9fe",
+  "#22c55e", 
+  "#eab308", 
+  "#f97316", 
+  "#a855f7", 
+  "#ec4899", 
+  "#84cc16", 
+  "#facc15", 
+  "#fb923c", 
+  "#d946ef", 
+  "#f472b6", 
 ];
 
-
-
-export default function Index({ data }: Props) {
+export default function Index({ data }: ByCategoryProps) {
   
   const baseHeight = 255;
   const extraHeightPerItem = 20;
@@ -44,10 +38,8 @@ export default function Index({ data }: Props) {
   return (
     <div
       className="col-span-3 relative rounded-[10px] px-[17px] py-[21px] !pb-[7px] border border-[#f1f1f1] bg-[#FCFCFC]"
-      style={{ height: containerHeight }}
-    >
+      style={{ height: containerHeight }}>
       <p className="font-[500] text-[15px] leading-[32px] mb-[4px]">Blogs by category</p>
-
       <div className="relative w-full">
         <ResponsiveContainer width="100%" height={130}>
           <PieChart margin={{ top: 0, bottom: -75 }}>
