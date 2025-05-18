@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter';
+}
+
 .container{
     max-width: 1440px;
     background: #DDE1F2;
     margin: 0 auto;
+    padding-left:210px;
+    padding-right: 102px;
+    padding-top:51px
 }
