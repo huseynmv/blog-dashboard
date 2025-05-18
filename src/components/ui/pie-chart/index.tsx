@@ -40,7 +40,7 @@ export default function Index({ data }: ByCategoryProps) {
       className="col-span-3 relative rounded-[10px] px-[17px] py-[21px] !pb-[7px] border border-[#f1f1f1] bg-[#FCFCFC]"
       style={{ height: containerHeight }}>
       <p className="font-[500] text-[15px] leading-[32px] mb-[4px]">Blogs by category</p>
-      <div className="relative w-full">
+      <div className="relative w-full pointer-events-none">
         <ResponsiveContainer width="100%" height={130}>
           <PieChart margin={{ top: 0, bottom: -75 }}>
             <Pie
