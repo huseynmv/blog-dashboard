@@ -3,7 +3,7 @@ import Charts from "./components/chart"
 
 const App = () => {
   return (
-    <div className="container md:!px-[50px] sm:!px-[20px]">
+    <div className="container">
       <Charts/>
       <Blogs/>
     </div>
