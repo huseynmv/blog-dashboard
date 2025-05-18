@@ -24,7 +24,7 @@ const Blogs = () => {
           }
         }
       },
-      { threshold: 1 }
+      { threshold: 0.1 }
     );
 
     if (sentinelRef.current) {
@@ -47,7 +47,7 @@ return (
     </div>
     {visibleBlogs.length < blogsData.blogs.length && (
   <div ref={sentinelRef} className="flex justify-center items-center h-16">
-    <span className="animate-spin rounded-full h-6 w-6 bg-[#DDE1F2]" />
+    <span className="animate-spin rounded-full h-10 w-10 bg-[#DDE1F2]" />
   </div>
 )}
 
